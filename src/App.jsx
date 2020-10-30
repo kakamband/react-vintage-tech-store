@@ -2,7 +2,6 @@ import React from 'react';
 
 // router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 // pages
 import About from './pages/About';
 import Cart from './pages/Cart';
@@ -15,7 +14,21 @@ import ProductDetails from './pages/ProductDetails';
 
 //components
 const App = () => {
-  return <h1>hello from app component</h1>;
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
+      </Switch>
+    </Router>
+  );
 };
 
 export default App;
