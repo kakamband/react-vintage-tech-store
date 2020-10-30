@@ -1,5 +1,7 @@
-import React from "react";
+import React from 'react';
 
-export default function Alert() {
+const Alert = () => {
   return <h1>hello from alert</h1>;
-}
+};
+
+export default Alert;
