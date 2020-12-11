@@ -9,7 +9,11 @@ export default function ProductProvider({ children }) {
   const [featured, setFeatured] = useState([]);
 
   useEffect(() => {
-    axios.get(url).then(storeProducts => console.log(storeProducts));
+    setLoading(true);
+    axios.get(url).then(response => {
+      setProducts(response.data);
+      setLoading(false);
+    });
     return () => {};
   }, []);
 
