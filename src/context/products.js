@@ -1,12 +1,14 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 
 export const ProductContext = createContext();
 
 export default function ProductProvider({ children }) {
-  const greeting = 'hello';
-  const product = { id: 1, title: 'product name' };
+  const [loading, setLoading] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [featured, setFeatured] = useState([]);
+
   return (
-    <ProductContext.Provider value={{ greeting, product }}>
+    <ProductContext.Provider value={{ loading, products, featured }}>
       {children}
     </ProductContext.Provider>
   );
